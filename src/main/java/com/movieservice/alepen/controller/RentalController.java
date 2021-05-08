@@ -30,6 +30,15 @@ public class RentalController {
     }
     @PostMapping("/movies")
     public ResponseEntity<Movie> addMovie(@RequestBody Movie movie){
-        return ResponseEntity.ok(movie);
+        return ResponseEntity.ok(movieService.addOneMovie(movie));
+    }
+    @PutMapping("/movies/{id}")
+    public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody Movie movie){
+        return ResponseEntity.ok(movieService.updateOneMovie(id,movie));
+    }
+    @DeleteMapping("/movies/{id}")
+    public ResponseEntity<Void> deleteMovie(@PathVariable Long id){
+        movieService.deleteOneMovie(id);
+        return ResponseEntity.ok().build();
     }
 }

@@ -20,8 +20,20 @@ public class MovieService {
     public Movie getOneMovie(Long id){
         Movie movie1=new Movie(123L,"IT", Movie.Category.HORROR);
         return movie1;
-
         }
 
+    public Movie addOneMovie(Movie movie){
+        System.out.println("One film added");
+        return movie;
+    }
+
+    public Movie updateOneMovie(Long id, Movie movie){
+        System.out.println("One film updated");
+        return movie;
+        }
+
+    public void deleteOneMovie(Long id){
+        System.out.println("One film deleted");
+    }
 
 }
