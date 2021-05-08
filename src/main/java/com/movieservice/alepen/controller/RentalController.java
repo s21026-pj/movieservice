@@ -28,14 +28,17 @@ public class RentalController {
     public ResponseEntity<Movie> getSpecificMovie(@PathVariable Long id) {
         return ResponseEntity.ok(movieService.getOneMovie(id));
     }
+
     @PostMapping("/movies")
     public ResponseEntity<Movie> addMovie(@RequestBody Movie movie){
         return ResponseEntity.ok(movieService.addOneMovie(movie));
     }
+
     @PutMapping("/movies/{id}")
     public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody Movie movie){
         return ResponseEntity.ok(movieService.updateOneMovie(id,movie));
     }
+
     @DeleteMapping("/movies/{id}")
     public ResponseEntity<Void> deleteMovie(@PathVariable Long id){
         movieService.deleteOneMovie(id);
