@@ -5,9 +5,6 @@ public class Movie {
     private String name;
     private Category category;
 
-    public enum  Category{
-     HORROR,DRAMA,COMEDY,SCIFI
-    }
 
     public Movie() {
     }
